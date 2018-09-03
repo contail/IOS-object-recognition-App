@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC6BD338213D1B3E00CC0C9A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6BD337213D1B3E00CC0C9A /* MainViewController.swift */; };
+		AC6BD33A213D20C400CC0C9A /* MainFeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6BD339213D20C400CC0C9A /* MainFeatureCell.swift */; };
+		AC6BD33C213D228900CC0C9A /* Sampledata.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6BD33B213D228900CC0C9A /* Sampledata.swift */; };
 		AC867448213A5F1000F3D3B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC867447213A5F1000F3D3B1 /* AppDelegate.swift */; };
-		AC86744A213A5F1000F3D3B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC867449213A5F1000F3D3B1 /* ViewController.swift */; };
 		AC86744D213A5F1000F3D3B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC86744B213A5F1000F3D3B1 /* Main.storyboard */; };
 		AC86744F213A5F1100F3D3B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC86744E213A5F1100F3D3B1 /* Assets.xcassets */; };
 		AC867452213A5F1100F3D3B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC867450213A5F1100F3D3B1 /* LaunchScreen.storyboard */; };
@@ -26,9 +28,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC6BD337213D1B3E00CC0C9A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		AC6BD339213D20C400CC0C9A /* MainFeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeatureCell.swift; sourceTree = "<group>"; };
+		AC6BD33B213D228900CC0C9A /* Sampledata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sampledata.swift; sourceTree = "<group>"; };
 		AC867444213A5F1000F3D3B1 /* FirstMyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstMyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC867447213A5F1000F3D3B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AC867449213A5F1000F3D3B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AC86744C213A5F1000F3D3B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC86744E213A5F1100F3D3B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC867451213A5F1100F3D3B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,11 +82,13 @@
 			isa = PBXGroup;
 			children = (
 				AC867447213A5F1000F3D3B1 /* AppDelegate.swift */,
-				AC867449213A5F1000F3D3B1 /* ViewController.swift */,
 				AC86744B213A5F1000F3D3B1 /* Main.storyboard */,
 				AC86744E213A5F1100F3D3B1 /* Assets.xcassets */,
 				AC867450213A5F1100F3D3B1 /* LaunchScreen.storyboard */,
 				AC867453213A5F1100F3D3B1 /* Info.plist */,
+				AC6BD337213D1B3E00CC0C9A /* MainViewController.swift */,
+				AC6BD339213D20C400CC0C9A /* MainFeatureCell.swift */,
+				AC6BD33B213D228900CC0C9A /* Sampledata.swift */,
 			);
 			path = FirstMyApp;
 			sourceTree = "<group>";
@@ -197,8 +203,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC86744A213A5F1000F3D3B1 /* ViewController.swift in Sources */,
 				AC867448213A5F1000F3D3B1 /* AppDelegate.swift in Sources */,
+				AC6BD33A213D20C400CC0C9A /* MainFeatureCell.swift in Sources */,
+				AC6BD338213D1B3E00CC0C9A /* MainViewController.swift in Sources */,
+				AC6BD33C213D228900CC0C9A /* Sampledata.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
