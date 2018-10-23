@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hDb-ot-soE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hDb-ot-soE">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,14 +30,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="17c-p6-f36">
-                                                    <rect key="frame" x="20" y="14" width="60" height="60"/>
+                                                    <rect key="frame" x="20" y="15" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="C6I-ge-n9p"/>
                                                         <constraint firstAttribute="width" constant="60" id="CRd-Ci-pkv"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OzG-83-sv3">
-                                                    <rect key="frame" x="97" y="25.666666666666664" width="297" height="37.333333333333329"/>
+                                                    <rect key="frame" x="97" y="26.333333333333332" width="297" height="37.333333333333343"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1G-MY-sfF">
                                                             <rect key="frame" x="0.0" y="0.0" width="297" height="20.333333333333332"/>
@@ -101,22 +100,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3mw-ta-CXr">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQ9-dO-tbP">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3mw-ta-CXr" firstAttribute="leading" secondItem="VCN-9F-4Ra" secondAttribute="leading" id="5oT-CL-L03"/>
-                            <constraint firstItem="3mw-ta-CXr" firstAttribute="top" secondItem="VCN-9F-4Ra" secondAttribute="top" id="IB1-A4-C3e"/>
-                            <constraint firstItem="VCN-9F-4Ra" firstAttribute="trailing" secondItem="3mw-ta-CXr" secondAttribute="trailing" id="bjO-be-ziT"/>
-                            <constraint firstItem="VCN-9F-4Ra" firstAttribute="bottom" secondItem="3mw-ta-CXr" secondAttribute="bottom" id="o1R-BM-rSj"/>
+                            <constraint firstItem="VCN-9F-4Ra" firstAttribute="bottom" secondItem="KQ9-dO-tbP" secondAttribute="bottom" id="7Jf-B1-8bk"/>
+                            <constraint firstItem="VCN-9F-4Ra" firstAttribute="trailing" secondItem="KQ9-dO-tbP" secondAttribute="trailing" id="9xy-Ep-c1G"/>
+                            <constraint firstItem="KQ9-dO-tbP" firstAttribute="leading" secondItem="VCN-9F-4Ra" secondAttribute="leading" id="QD9-hB-Cnc"/>
+                            <constraint firstItem="KQ9-dO-tbP" firstAttribute="top" secondItem="VCN-9F-4Ra" secondAttribute="top" id="VcA-pl-tdL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VCN-9F-4Ra"/>
                     </view>
                     <connections>
-                        <outlet property="cameraView" destination="3mw-ta-CXr" id="rDB-St-iV8"/>
+                        <outlet property="cameraView" destination="KQ9-dO-tbP" id="Ddb-FH-1GO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1k-FP-xp2" userLabel="First Responder" sceneMemberID="firstResponder"/>
