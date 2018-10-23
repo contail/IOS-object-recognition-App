@@ -103,27 +103,27 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQ9-dO-tbP">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="confidence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkU-pI-6DY">
-                                        <rect key="frame" x="164" y="599" width="86" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="confidence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsW-Wm-04E">
+                                        <rect key="frame" x="164" y="621" width="86" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpG-ve-uia">
-                                        <rect key="frame" x="15" y="555" width="384" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdT-Lg-jnb">
+                                        <rect key="frame" x="8" y="574.66666666666663" width="398" height="38.333333333333371"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="OkU-pI-6DY" firstAttribute="leading" secondItem="KQ9-dO-tbP" secondAttribute="leading" constant="164" id="E7e-n0-MtD"/>
-                                    <constraint firstItem="OkU-pI-6DY" firstAttribute="top" secondItem="OpG-ve-uia" secondAttribute="bottom" constant="12" id="X4l-2e-4m3"/>
-                                    <constraint firstAttribute="bottom" secondItem="OkU-pI-6DY" secondAttribute="bottom" constant="52" id="Yxs-OK-9pF"/>
-                                    <constraint firstItem="OpG-ve-uia" firstAttribute="leading" secondItem="KQ9-dO-tbP" secondAttribute="leading" constant="15" id="dcq-pq-ezt"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OkU-pI-6DY" secondAttribute="trailing" constant="20" symbolic="YES" id="tLK-w6-EjH"/>
-                                    <constraint firstAttribute="trailing" secondItem="OpG-ve-uia" secondAttribute="trailing" constant="15" id="tvX-Wz-3iB"/>
+                                    <constraint firstItem="hdT-Lg-jnb" firstAttribute="leading" secondItem="KQ9-dO-tbP" secondAttribute="leading" constant="8" id="4JZ-pX-mET"/>
+                                    <constraint firstItem="XsW-Wm-04E" firstAttribute="leading" secondItem="KQ9-dO-tbP" secondAttribute="leading" constant="164" id="GjQ-u4-ZGQ"/>
+                                    <constraint firstItem="XsW-Wm-04E" firstAttribute="top" secondItem="hdT-Lg-jnb" secondAttribute="bottom" constant="8" id="LpQ-Xk-Bec"/>
+                                    <constraint firstAttribute="trailing" secondItem="hdT-Lg-jnb" secondAttribute="trailing" constant="8" id="MUp-vH-4Hy"/>
+                                    <constraint firstAttribute="bottom" secondItem="XsW-Wm-04E" secondAttribute="bottom" constant="30" id="fev-61-D1i"/>
+                                    <constraint firstAttribute="trailing" secondItem="XsW-Wm-04E" secondAttribute="trailing" constant="164" id="uzE-Xx-3Ol"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -138,8 +138,8 @@
                     </view>
                     <connections>
                         <outlet property="cameraView" destination="KQ9-dO-tbP" id="Ddb-FH-1GO"/>
-                        <outlet property="categoryView" destination="OkU-pI-6DY" id="24Q-U4-c9b"/>
-                        <outlet property="confidenceView" destination="OkU-pI-6DY" id="Hgq-c9-315"/>
+                        <outlet property="categoryLable" destination="hdT-Lg-jnb" id="ITk-bC-NUK"/>
+                        <outlet property="confidenceLable" destination="XsW-Wm-04E" id="EHi-tO-ZRn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1k-FP-xp2" userLabel="First Responder" sceneMemberID="firstResponder"/>

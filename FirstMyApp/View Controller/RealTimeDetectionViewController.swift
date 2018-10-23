@@ -10,17 +10,18 @@ import UIKit
 import Vision
 class RealTimeDetectionViewController: UIViewController {
 
+    @IBOutlet weak var categoryLable: UILabel!
     @IBOutlet weak var cameraView: UIView!
-    @IBOutlet weak var categoryView: UILabel!
-    @IBOutlet weak var confidenceView: UILabel!
+    @IBOutlet weak var confidenceLable: UILabel!
+    
     var videoCapture : VideoCapture!
     let visonRequestHanlder = VNSequenceRequestHandler()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.categoryView.text = ""
-        self.confidenceView.text = ""
         
+        self.categoryLable.text = ""
+        self.confidenceLable.text = ""
         let spec = VideoSpec(fps :3, size : CGSize(width: 1280, height: 720))
         self.videoCapture = VideoCapture(cameraType: .back, preferredSpec: spec, previewContainer: self.cameraView.layer)
         
@@ -62,7 +63,10 @@ class RealTimeDetectionViewController: UIViewController {
     
     func handleObjectDection(request: VNRequest, error: Error?) {
         if let result = request.results?.first as? VNClassificationObservation {
-            print("\(result.identifier) :  \(result.confidence)")
+            DispatchQueue.main.async {
+                self.categoryLable.text = "\(result.identifier)"
+                self.confidenceLable.text = "\(String(format: "%.1f", result.confidence * 100)) %"
+            }
         }
     }
 }
