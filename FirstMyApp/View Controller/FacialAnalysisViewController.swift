@@ -11,8 +11,11 @@ import Vision
 import AVFoundation
 class FacialAnalysisViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var facesScrollView: UIScrollView!
     @IBOutlet weak var blurredImageView: UIImageView!
     @IBOutlet weak var selectedImageView: UIImageView!
+    
+    var faceImageViews = [UIImageView]()
     var selectedImage: UIImage? {
         didSet{
             self.selectedImageView.image = selectedImage
@@ -65,7 +68,7 @@ class FacialAnalysisViewController: UIViewController, UIImagePickerControllerDel
         if let uiImage = info[UIImagePickerControllerEditedImage] as? UIImage{
             self.selectedImage = uiImage
             self.removeRectangles()
-            
+            self.removeFaceImageViews()
             DispatchQueue.global(qos: .userInitiated).async {
                 self.detectedFaces()
             }
@@ -98,7 +101,7 @@ class FacialAnalysisViewController: UIViewController, UIImagePickerControllerDel
     func displayUI(for faces : [VNFaceObservation]){
         if let faceImage = self.selectedImage {
             let imageRect = AVMakeRect(aspectRatio: faceImage.size, insideRect: self.selectedImageView.bounds)
-            for face in faces{
+            for (index, face) in faces.enumerated(){
                 let w = face.boundingBox.size.width * imageRect.width
                 let h = face.boundingBox.size.height * imageRect.height
                 let x = face.boundingBox.origin.x * imageRect.width
@@ -108,7 +111,24 @@ class FacialAnalysisViewController: UIViewController, UIImagePickerControllerDel
                 layer.borderColor = UIColor.red.cgColor
                 layer.borderWidth = 1
                 self.selectedImageView.layer.addSublayer(layer)
+                
+                let w2 = face.boundingBox.size.width * faceImage.size.width
+                let h2 = face.boundingBox.size.height * faceImage.size.height
+                let x2 = face.boundingBox.origin.x * faceImage.size.width
+                let y2 = (1-face.boundingBox.origin.y) *    faceImage.size.height - h2
+                
+                let cropRect = CGRect(x: x2 * faceImage.scale, y: y2 * faceImage.scale, width: w2 * faceImage.scale, height: h2 * faceImage.scale)
+                
+                if let faceCIImage = faceImage.cgImage?.cropping(to: cropRect) {
+                    let faceUIImage = UIImage(cgImage: faceCIImage, scale: faceImage.scale, orientation: .up)
+                    let faceImageView = UIImageView(frame: CGRect(x: 90*index, y: 0, width: 80, height: 80 ))
+                    faceImageView.image = faceUIImage
+                    self.facesScrollView.addSubview(faceImageView)
+                    self.faceImageViews.append(faceImageView)
+                }
             }
+            
+            self.facesScrollView.contentSize = CGSize(width: 90*faces.count-10, height: 80)
         }
     }
     
@@ -118,6 +138,13 @@ class FacialAnalysisViewController: UIViewController, UIImagePickerControllerDel
                 layer.removeFromSuperlayer()
             }
         }
+    }
+    
+    func removeFaceImageViews(){
+        for faceImageView in self.faceImageViews {
+            faceImageView.removeFromSuperview()
+        }
+        self.faceImageViews.removeAll()
     }
     
     override func viewDidLoad() {

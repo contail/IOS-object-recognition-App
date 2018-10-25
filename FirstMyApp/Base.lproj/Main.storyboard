@@ -259,6 +259,12 @@
                                 </view>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDk-2e-qKR">
+                                <rect key="frame" x="0.0" y="283" width="414" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="IWB-Dn-e4j"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -268,6 +274,9 @@
                             <constraint firstItem="aU4-dr-SBC" firstAttribute="bottom" secondItem="bYA-jI-Wsu" secondAttribute="bottom" id="GD2-MK-k6M"/>
                             <constraint firstItem="bYA-jI-Wsu" firstAttribute="leading" secondItem="ppE-Fh-Ikj" secondAttribute="leading" id="InR-bv-05q"/>
                             <constraint firstItem="ppE-Fh-Ikj" firstAttribute="trailing" secondItem="bYA-jI-Wsu" secondAttribute="trailing" id="RPu-zl-dzr"/>
+                            <constraint firstItem="SDk-2e-qKR" firstAttribute="leading" secondItem="ppE-Fh-Ikj" secondAttribute="leading" id="b6r-oc-s36"/>
+                            <constraint firstItem="ppE-Fh-Ikj" firstAttribute="trailing" secondItem="SDk-2e-qKR" secondAttribute="trailing" id="dq2-a1-ZiF"/>
+                            <constraint firstItem="SDk-2e-qKR" firstAttribute="top" secondItem="aU4-dr-SBC" secondAttribute="bottom" constant="12" id="fhm-fO-NSf"/>
                             <constraint firstItem="aU4-dr-SBC" firstAttribute="top" secondItem="bYA-jI-Wsu" secondAttribute="top" id="ngM-Uu-fKV"/>
                             <constraint firstItem="aU4-dr-SBC" firstAttribute="trailing" secondItem="bYA-jI-Wsu" secondAttribute="trailing" id="rhE-ob-BeC"/>
                         </constraints>
@@ -282,6 +291,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="blurredImageView" destination="bYA-jI-Wsu" id="mkp-MC-6lI"/>
+                        <outlet property="facesScrollView" destination="SDk-2e-qKR" id="SIi-Dl-qwv"/>
                         <outlet property="selectedImageView" destination="rkj-3z-NN3" id="ZxO-bv-BBM"/>
                     </connections>
                 </viewController>
