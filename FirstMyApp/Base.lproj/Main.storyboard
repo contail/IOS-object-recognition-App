@@ -227,20 +227,67 @@
             </objects>
             <point key="canvasLocation" x="-960.79999999999995" y="856.82158920539734"/>
         </scene>
-        <!--View Controller-->
+        <!--Facial Analysis View Controller-->
         <scene sceneID="1cf-xq-Ghp">
             <objects>
-                <viewController id="rYq-rQ-zS2" sceneMemberID="viewController">
+                <viewController id="rYq-rQ-zS2" customClass="FacialAnalysisViewController" customModule="FirstMyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ciS-54-bcc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bYA-jI-Wsu">
+                                <rect key="frame" x="0.0" y="64" width="414" height="207"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aU4-dr-SBC">
+                                <rect key="frame" x="0.0" y="64" width="414" height="207"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="81z-2z-fyD">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="207"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rkj-3z-NN3">
+                                            <rect key="frame" x="103.66666666666669" y="0.0" width="207" height="207"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="rkj-3z-NN3" secondAttribute="height" id="EVe-4a-WAu"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rkj-3z-NN3" firstAttribute="centerY" secondItem="81z-2z-fyD" secondAttribute="centerY" id="K31-Ma-mkV"/>
+                                        <constraint firstItem="rkj-3z-NN3" firstAttribute="height" secondItem="81z-2z-fyD" secondAttribute="height" id="c2l-5i-VmK"/>
+                                        <constraint firstItem="rkj-3z-NN3" firstAttribute="centerX" secondItem="81z-2z-fyD" secondAttribute="centerX" id="yGp-pQ-VrI"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bYA-jI-Wsu" firstAttribute="top" secondItem="ppE-Fh-Ikj" secondAttribute="top" id="0NE-W2-Iu1"/>
+                            <constraint firstItem="bYA-jI-Wsu" firstAttribute="height" secondItem="ciS-54-bcc" secondAttribute="width" multiplier="0.5" id="504-ew-wom"/>
+                            <constraint firstItem="aU4-dr-SBC" firstAttribute="leading" secondItem="bYA-jI-Wsu" secondAttribute="leading" id="8Mj-JD-Um1"/>
+                            <constraint firstItem="aU4-dr-SBC" firstAttribute="bottom" secondItem="bYA-jI-Wsu" secondAttribute="bottom" id="GD2-MK-k6M"/>
+                            <constraint firstItem="bYA-jI-Wsu" firstAttribute="leading" secondItem="ppE-Fh-Ikj" secondAttribute="leading" id="InR-bv-05q"/>
+                            <constraint firstItem="ppE-Fh-Ikj" firstAttribute="trailing" secondItem="bYA-jI-Wsu" secondAttribute="trailing" id="RPu-zl-dzr"/>
+                            <constraint firstItem="aU4-dr-SBC" firstAttribute="top" secondItem="bYA-jI-Wsu" secondAttribute="top" id="ngM-Uu-fKV"/>
+                            <constraint firstItem="aU4-dr-SBC" firstAttribute="trailing" secondItem="bYA-jI-Wsu" secondAttribute="trailing" id="rhE-ob-BeC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ppE-Fh-Ikj"/>
                     </view>
+                    <navigationItem key="navigationItem" id="d0d-PJ-9Gm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zJP-PH-2Ta">
+                            <connections>
+                                <action selector="addPhto:" destination="rYq-rQ-zS2" id="8jc-nZ-P7s"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="blurredImageView" destination="bYA-jI-Wsu" id="mkp-MC-6lI"/>
+                        <outlet property="selectedImageView" destination="rkj-3z-NN3" id="ZxO-bv-BBM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ak-wk-Nst" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="552" y="858"/>
+            <point key="canvasLocation" x="550.72463768115949" y="857.60869565217399"/>
         </scene>
     </scenes>
 </document>
