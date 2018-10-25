@@ -7,9 +7,10 @@
 //
 
 import UIKit
-
+import Vision
+import AVFoundation
 class FacialAnalysisViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var blurredImageView: UIImageView!
     @IBOutlet weak var selectedImageView: UIImageView!
     var selectedImage: UIImage? {
@@ -18,6 +19,19 @@ class FacialAnalysisViewController: UIViewController, UIImagePickerControllerDel
             self.blurredImageView.image = selectedImage
         }
     }
+    
+    var seletedCiImage: CIImage? {
+        get {
+            if let selectedImage = self.selectedImage{
+                return CIImage(image : selectedImage)
+            }
+            else{
+                return nil
+            }
+        }
+    }
+    
+    
     @IBAction func addPhto(_ sender: UIBarButtonItem) {
         
         let actionSheet =  UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -50,24 +64,69 @@ class FacialAnalysisViewController: UIViewController, UIImagePickerControllerDel
         picker.dismiss(animated: true, completion: nil)
         if let uiImage = info[UIImagePickerControllerEditedImage] as? UIImage{
             self.selectedImage = uiImage
+            self.removeRectangles()
+            
+            DispatchQueue.global(qos: .userInitiated).async {
+                self.detectedFaces()
+            }
+            
+        }
+    }
+    
+    func detectedFaces(){
+        if let ciImage = self.seletedCiImage{
+            let detectFaceRequest = VNDetectFaceRectanglesRequest(completionHandler: self.handleFaces)
+            let requestHandler = VNImageRequestHandler(ciImage: ciImage, options: [:])
+            
+            do{
+                try requestHandler.perform([detectFaceRequest])
+            }catch{
+                print(error)
+            }
+        }
+    }
+    
+    func handleFaces(requset: VNRequest, error: Error?){
+        if let faces = requset.results as? [VNFaceObservation]{
+            DispatchQueue.main.async {
+                self.displayUI(for: faces)
+            }
+            
+        }
+    }
+    
+    func displayUI(for faces : [VNFaceObservation]){
+        if let faceImage = self.selectedImage {
+            let imageRect = AVMakeRect(aspectRatio: faceImage.size, insideRect: self.selectedImageView.bounds)
+            for face in faces{
+                let w = face.boundingBox.size.width * imageRect.width
+                let h = face.boundingBox.size.height * imageRect.height
+                let x = face.boundingBox.origin.x * imageRect.width
+                let y = imageRect.maxY - (face.boundingBox.origin.y * imageRect.height) - h
+                let layer =  CAShapeLayer()
+                layer.frame = CGRect(x:x, y:y, width:w, height:h)
+                layer.borderColor = UIColor.red.cgColor
+                layer.borderWidth = 1
+                self.selectedImageView.layer.addSublayer(layer)
+            }
+        }
+    }
+    
+    func removeRectangles(){
+        if let sublayers = self.selectedImageView.layer.sublayers{
+            for layer in sublayers{
+                layer.removeFromSuperlayer()
+            }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
+    
 }
