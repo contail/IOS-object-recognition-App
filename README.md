@@ -14,6 +14,22 @@
 - Gender Model
 - ios ver 11
 
+### AgeNet
+**Model:** [AgeNet](https://drive.google.com/file/d/0B1ghKa_MYL6mT1J3T1BEeWx4TWc/view?usp=sharing) <br />
+**Description:** Age Classification <br />
+**Author:** [Gil Levi and Tal Hassner](http://www.openu.ac.il/home/hassner/projects/cnn_agegender/) <br />
+**Reference:** [Age and Gender Classification using Convolutional Neural Networks](http://www.openu.ac.il/home/hassner/projects/cnn_agegender/CNN_AgeGenderEstimation.pdf) <br />
+**Example:** [FacesVisionDemo](https://github.com/cocoa-ai/FacesVisionDemo) <br />
+
+### GenderNet
+**Model:** [GenderNet](https://drive.google.com/file/d/0B1ghKa_MYL6mYkNsZHlyc2ZuaFk/view?usp=sharing) <br />
+**Description:** Gender Classification <br />
+**Author:** [Gil Levi and Tal Hassner](http://www.openu.ac.il/home/hassner/projects/cnn_agegender/) <br />
+**Reference:** [Age and Gender Classification using Convolutional Neural Networks](http://www.openu.ac.il/home/hassner/projects/cnn_agegender/CNN_AgeGenderEstimation.pdf) <br />
+**Example:** [FacesVisionDemo](https://github.com/cocoa-ai/FacesVisionDemo) <br />
+
+## Examples
+
 ### This is Main View
 
 ![mains](https://user-images.githubusercontent.com/15063135/47606524-87c66d80-da4f-11e8-985d-184a11b66630.png)
@@ -36,19 +52,7 @@
 ![faces](https://user-images.githubusercontent.com/15063135/47606560-e5f35080-da4f-11e8-803e-416fbadddc97.jpeg)
 
 
-### AgeNet
-**Model:** [AgeNet](https://drive.google.com/file/d/0B1ghKa_MYL6mT1J3T1BEeWx4TWc/view?usp=sharing) <br />
-**Description:** Age Classification <br />
-**Author:** [Gil Levi and Tal Hassner](http://www.openu.ac.il/home/hassner/projects/cnn_agegender/) <br />
-**Reference:** [Age and Gender Classification using Convolutional Neural Networks](http://www.openu.ac.il/home/hassner/projects/cnn_agegender/CNN_AgeGenderEstimation.pdf) <br />
-**Example:** [FacesVisionDemo](https://github.com/cocoa-ai/FacesVisionDemo) <br />
 
-### GenderNet
-**Model:** [GenderNet](https://drive.google.com/file/d/0B1ghKa_MYL6mYkNsZHlyc2ZuaFk/view?usp=sharing) <br />
-**Description:** Gender Classification <br />
-**Author:** [Gil Levi and Tal Hassner](http://www.openu.ac.il/home/hassner/projects/cnn_agegender/) <br />
-**Reference:** [Age and Gender Classification using Convolutional Neural Networks](http://www.openu.ac.il/home/hassner/projects/cnn_agegender/CNN_AgeGenderEstimation.pdf) <br />
-**Example:** [FacesVisionDemo](https://github.com/cocoa-ai/FacesVisionDemo) <br />
 
 ### CNNEmotions
 **Model:** [CNNEmotions](https://drive.google.com/file/d/0B1ghKa_MYL6mTlYtRGdXNFlpWDQ/view?usp=sharing) <br />
