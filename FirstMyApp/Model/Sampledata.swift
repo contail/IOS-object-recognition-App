@@ -16,8 +16,8 @@ struct Sample {
 
 struct SampleData {
     let samples = [
-        Sample(title:"Test1" , descrtipion: "test11111", image:"ic_photo"),
-        Sample(title:"Test2" , descrtipion: "test22222", image:"ic_camera"),
-        Sample(title:"Test3" , descrtipion: "test33333", image:"ic_photo")
+        Sample(title:"Photo object Dection" , descrtipion: "불러온 이미지의 사물 분석", image:"ic_photo"),
+        Sample(title:"Real Time Object Dection" , descrtipion: "실시간 사물 분석", image:"ic_camera"),
+        Sample(title:"Facial Analysis" , descrtipion: "사람의 얼굴,나이,감정 분석", image:"ic_photo")
     ]
 }
